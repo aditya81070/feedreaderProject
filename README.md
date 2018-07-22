@@ -1,18 +1,21 @@
 # Project Overview
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
-
+This is our RSS feed reader application. It uses the Google Feed Reader API to grab RSS feeds as JSON object we can make use of. It also uses the Handlebars templating library and jQuery. It contains Jasmien library for testing.
 
 ## Why this Project?
 
-Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
+Testing is an important part of every project. Testing can be done manually but as application increases it size, manually testing becomes difficult and it takes over and over and over....over time to test it. 
 
-Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
+This project is developed using Test Driven Developement(TDD) approach. In this project tests that project should be pass are written before the actual  project code. Now every test fail at start of the project. Now appropriate project code is written to pass this tests. 
 
+This approach has advantage that you don't need to check your project code again and again as it is already written to pass tests. 
 
-## What will I learn?
+## What I have learnt?
 
-You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
+This project is based on the jasmine testing framework of javaScipt. I have learnt about the Jasmine workflow. I learnt that jasmine tests the application using test suits thate are defined by its `describe()` function and tests for each test suits are defined by `it()` function.
+
+I also learned some basic jQuery syntax for manipulating and accessing DOM elements. 
+
 
 
 ## How will this help my career?
@@ -21,7 +24,28 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 * Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
 
 
-# How will I complete this project?
+# How I completed this project?
+
+Firstly I practiced my knowledge of Jasmine by creating a sample project. After that I copied basic code given by udacity to my project.
+
+I followed `Project Details` to complete this project. 
+
+# How to run locally?
+These are steps to run this project:-
+1. clone the repository:-
+	* using HTTP:-
+		> $ git clone https://github.com/aditya81070/feedreaderProject.git
+	* using SSH:-
+		> git clone git@github.com:aditya81070/feedreaderProject.git
+2. move into project directory and open `index.html` in your favorite browser.
+
+# Important files:-
+* `index.html`- Open this file in browser to run RSS feed reader.
+* `js/app.js` - This file has actual script to load feeds (`loadFeed()` function).
+* `jasmine/lib/` - This directory contains all jasmine libraries.
+* `jasmine/spec/feedreader.js` - This file contains all the tests for RSS feed reader. 
+
+# Project Details 
 
 Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
 
@@ -45,4 +69,3 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 18. Callbacks should be used to ensure that feeds are loaded before they are tested.
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
-21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
