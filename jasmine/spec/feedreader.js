@@ -66,7 +66,16 @@ $(function() {
 		 	const body=document.querySelector('body');
 		 	expect(body.className).toBe('menu-hidden');
 		 });
-	
+
+		it('changes visibility', function () {
+			const body=document.querySelector('body');
+			$('.menu-icon-link').trigger('click');
+			expect(body.className).toBe('');
+			$('.menu-icon-link').trigger('click');
+			expect(body.className).toBe('menu-hidden');
+
+
+		});
 
 	});
 		
