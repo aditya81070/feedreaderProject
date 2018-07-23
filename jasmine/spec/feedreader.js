@@ -44,7 +44,7 @@ $(function() {
 			let urlFeeds = allFeeds.filter(function(obj) {
 				return obj.hasOwnProperty('name') && obj.name.length != 0;
 			});
-			expect(urlFeeds.length).toBe(allFeeds.length);
+			expect(urlFeeds.length).toEqual(allFeeds.length);
 		});
 
 	});
@@ -92,7 +92,7 @@ $(function() {
 		and now we can test. 
 		*/
 		beforeEach(function(done) {
-			loadFeed(0, function() {
+			loadFeed(0, function(){
 				done();
 			});
 		});
@@ -106,7 +106,7 @@ $(function() {
 		 */
 
 		it('have atleast one entry in feed', function(done) {
-			expect($('.feed .entry').length).not.toEqual(0);
+			expect($('.feed .entry').length).toBeGreaterThan(0);
 			done();
 		})
 
@@ -115,22 +115,24 @@ $(function() {
 	/*Add new test suit 'New Feed Selection' */
 
 	describe('New Feed Selection', function() {
-		/* Content of article before loadFeed is completed */
-		const contentBeforeLoad = $('article').text();
 
 		/* As loadFeed is asynchronous function, done() function is required 
 		to ensure that test run after loadFeed is completed 
 		*/
+		let initialContent;
 
 		beforeEach(function(done) {
 			loadFeed(0, function() {
-				done();
+				initialContent=$('.feed').text();
+				loadFeed(1,function(){
+					done();
+				})
 			});
 		});
 
 		 /* It compares the content of article that it has changed after loadFeed is completed */
-		it('changes content', function(done) {
-			expect($('article').text()).not.toBe(contentBeforeLoad);
+		it('When a new feed is loaded by the loadFeed function the content changes', function(done) {
+			expect($('.feed').text()).not.toBe(initialContent);
 			done();
 		});
 	});
